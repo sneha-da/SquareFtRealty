@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -31,6 +32,21 @@ export default function Navbar() {
   return (
     <nav className={`${whiteBg ? "bg-white" : "bg-[var(--figma-light-gray)]"} px-8 lg:px-16 py-6 sticky top-0 z-50 transition-colors`}>
       <div className="max-w-[1440px] mx-auto relative flex items-center justify-center">
+        {/* Logo - Top Left, absolutely positioned */}
+        <Link 
+          href="/"
+          className="absolute left-0 hover:opacity-80 transition-opacity"
+        >
+          <Image
+            src="/21.png"
+            alt="SquareFt Realty Logo"
+            width={180}
+            height={60}
+            className="h-auto"
+            priority
+          />
+        </Link>
+
         {/* Navigation Links - Centered */}
         <div className="flex items-center gap-10">
           {navItems.map((item) => {
