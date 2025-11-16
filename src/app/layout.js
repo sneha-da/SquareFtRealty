@@ -15,6 +15,14 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "SquareFt Realty - Your Trusted Real Estate Partner",
   description: "Find your dream home with SquareFt Realty. Expert real estate services for buying, selling, and renting properties.",
+  icons: {
+    icon: [
+      { url: "/sqfeetrealty favicon.ico" },
+      { url: "/sqfeetrealty favicon.png", type: "image/png" }
+    ],
+    shortcut: "/sqfeetrealty favicon.ico",
+    apple: "/sqfeetrealty favicon.png"
+  }
 };
 
 export default function RootLayout({ children }) {

@@ -14,6 +14,14 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Admin - SquareFt Realty",
   description: "Admin dashboard for SquareFt Realty property management.",
+  icons: {
+    icon: [
+      { url: "/sqfeetrealty favicon.ico" },
+      { url: "/sqfeetrealty favicon.png", type: "image/png" }
+    ],
+    shortcut: "/sqfeetrealty favicon.ico",
+    apple: "/sqfeetrealty favicon.png"
+  }
 };
 
 export default function AdminLayout({ children }) {
