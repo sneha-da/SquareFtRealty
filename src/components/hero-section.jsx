@@ -134,23 +134,23 @@ export default function HeroSection() {
           </div>
           
           {/* Search Bar Overlay */}
-          <div className="absolute -bottom-[50px] left-1/2 transform -translate-x-1/2 w-full max-w-[971px] px-6">
-            <div className="bg-white rounded-[20px] px-8 pt-8 pb-10 flex flex-col justify-center">
-              <h3 className="text-[24px] font-medium mb-[20px] tracking-[-0.32px] text-[var(--figma-dark)]">
+          <div className="absolute -bottom-[50px] left-1/2 transform -translate-x-1/2 w-full max-w-[971px] px-4 md:px-6">
+            <div className="bg-white rounded-[20px] px-4 md:px-8 pt-6 md:pt-8 pb-8 md:pb-10 flex flex-col justify-center">
+              <h3 className="text-[18px] md:text-[24px] font-medium mb-4 md:mb-[20px] tracking-[-0.32px] text-[var(--figma-dark)]">
                 Find the best place
               </h3>
-              <div className="flex gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
                 <input
                   type="text"
-                  placeholder="Search location or property..."
+                  placeholder="Search location..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-lg"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
                 />
                 <select
                   value={propertyType}
                   onChange={(e) => setPropertyType(e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
                 >
                   <option value="">Property Type</option>
                   <option value="residentail-plot">Plot</option>
@@ -160,7 +160,7 @@ export default function HeroSection() {
                 <select
                   value={bedrooms}
                   onChange={(e) => setBedrooms(e.target.value)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg text-sm"
                 >
                   <option value="">Bedrooms</option>
                   <option value="1">1 BHK</option>
@@ -171,7 +171,7 @@ export default function HeroSection() {
                 </select>
                 <button
                   onClick={handleSearch}
-                  className="bg-[var(--figma-orange)] text-white px-8 py-2 rounded-lg font-semibold hover:opacity-90"
+                  className="w-full bg-[var(--figma-orange)] text-[var(--figma-dark)] px-6 py-2 rounded-lg font-semibold hover:opacity-90 text-sm"
                 >
                   Search
                 </button>
