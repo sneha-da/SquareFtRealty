@@ -485,34 +485,6 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-[var(--figma-dark)] text-white py-12 px-16 lg:px-32">
-        <div className="max-w-[1440px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-            <div>
-              <p className="text-[20px] font-medium mb-4">© 2025 SquareFt Realty</p>
-              <p className="text-[14px] opacity-80">All rights reserved.</p>
-            </div>
-            <nav className="flex flex-col gap-2 text-[16px]">
-              <a href="/" className="hover:opacity-80">Home</a>
-              <a href="/properties" className="hover:opacity-80">Properties</a>
-              <a href="/services" className="hover:opacity-80">Services</a>
-              <a href="/about" className="hover:opacity-80">About Us</a>
-              <a href="/contact" className="hover:opacity-80">Contact</a>
-            </nav>
-            <div className="flex flex-col gap-2 text-[16px]">
-              <a href="/privacy" className="hover:opacity-80">Privacy Policy</a>
-              <a href="/terms" className="hover:opacity-80">Terms of Service</a>
-              <div className="flex gap-4 mt-2 text-[14px] opacity-90">
-                <a href="#" aria-label="Facebook" className="hover:opacity-80">Facebook</a>
-                <a href="#" aria-label="Instagram" className="hover:opacity-80">Instagram</a>
-                <a href="#" aria-label="Twitter" className="hover:opacity-80">Twitter</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
