@@ -32,10 +32,10 @@ function Group2() {
   return (
     <div className="absolute contents left-[51px] top-[1378px]">
       <div className="absolute h-[431px] left-[51px] rounded-[20px] top-[1378px] w-[438.265px]">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle18} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle18.src} />
       </div>
       <div className="absolute h-[431px] left-[51px] rounded-[20px] top-[1378px] w-[438.265px]">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle18} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle18.src} />
       </div>
       <div className="absolute bg-white h-[137.753px] left-[51px] rounded-bl-[20px] rounded-br-[20px] top-[1671.25px] w-[438.265px]" />
       <div className="absolute bg-[#ffa816] h-[51.136px] left-[319.61px] rounded-[20px] top-[1743.25px] w-[159.553px]" />
@@ -68,7 +68,7 @@ function Group13() {
   return (
     <div className="absolute contents left-[948.74px] top-[1378px]">
       <div className="absolute h-[431px] left-[948.74px] rounded-[20px] top-[1378px] w-[438.265px]">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle18} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle18.src} />
       </div>
       <div className="absolute bg-white h-[137.753px] left-[948.74px] rounded-bl-[20px] rounded-br-[20px] top-[1671.25px] w-[438.265px]" />
       <div className="absolute bg-[#ffa816] h-[51.136px] left-[1217.35px] rounded-[20px] top-[1743.25px] w-[159.553px]" />
@@ -101,7 +101,7 @@ function Group15() {
   return (
     <div className="absolute contents left-[501px] top-[1378px]">
       <div className="absolute h-[431px] left-[501px] rounded-[20px] top-[1378px] w-[438.265px]">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle19} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle19.src} />
       </div>
       <div className="absolute bg-white h-[137.753px] left-[501px] rounded-bl-[20px] rounded-br-[20px] top-[1671.25px] w-[438.265px]" />
       <div className="absolute h-[51.136px] left-[769.61px] top-[1743.25px] w-[159.553px]">
@@ -138,10 +138,10 @@ function Group17() {
   return (
     <div className="absolute contents left-[51px] top-[1821px]">
       <div className="absolute h-[431px] left-[51px] rounded-[20px] top-[1821px] w-[438.265px]">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle18} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle18.src} />
       </div>
       <div className="absolute h-[431px] left-[51px] rounded-[20px] top-[1821px] w-[438.265px]">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle18} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle18.src} />
       </div>
       <div className="absolute bg-white h-[137.753px] left-[51px] rounded-bl-[20px] rounded-br-[20px] top-[2114.25px] w-[438.265px]" />
       <div className="absolute bg-[#ffa816] h-[51.136px] left-[319.61px] rounded-[20px] top-[2186.25px] w-[159.553px]" />
@@ -174,7 +174,7 @@ function Group19() {
   return (
     <div className="absolute contents left-[948.74px] top-[1821px]">
       <div className="absolute h-[431px] left-[948.74px] rounded-[20px] top-[1821px] w-[438.265px]">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle18} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle18.src} />
       </div>
       <div className="absolute bg-white h-[137.753px] left-[948.74px] rounded-bl-[20px] rounded-br-[20px] top-[2114.25px] w-[438.265px]" />
       <div className="absolute bg-[#ffa816] h-[51.136px] left-[1217.35px] rounded-[20px] top-[2186.25px] w-[159.553px]" />
@@ -207,7 +207,7 @@ function Group21() {
   return (
     <div className="absolute contents left-[501px] top-[1821px]">
       <div className="absolute h-[431px] left-[501px] rounded-[20px] top-[1821px] w-[438.265px]">
-        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle19} />
+        <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle19.src} />
       </div>
       <div className="absolute bg-white h-[137.753px] left-[501px] rounded-bl-[20px] rounded-br-[20px] top-[2114.25px] w-[438.265px]" />
       <div className="absolute bg-[#ffa816] h-[51.136px] left-[769.61px] rounded-[20px] top-[2186.25px] w-[159.553px]" />
@@ -354,7 +354,7 @@ export default function HomePage() {
         <div className="absolute bg-[#ffa816] left-[1190px] rounded-[20px] top-[21px]" style={{ height: "56px", width: "200px" }} />
         <Group />
         <div className="absolute h-[510px] left-[51px] rounded-[20px] top-[476px] w-[1393px]">
-          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle20} />
+          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle20.src} />
         </div>
         <div className="absolute bg-white h-[222px] left-[216px] rounded-[20px] top-[878px] w-[971px]" />
         <p className="absolute font-['Poppins:Medium',_sans-serif] leading-[normal] left-[251px] not-italic text-[#232429] text-[26px] top-[910px] tracking-[-0.52px] w-[507px]">Find the best place</p>
@@ -377,11 +377,11 @@ export default function HomePage() {
         <div className="absolute bg-white h-[199px] left-[63px] rounded-[20px] top-[2843px] w-[280px]" />
         <div className="absolute bg-white h-[199px] left-[352px] rounded-[20px] top-[2843px] w-[280px]" />
         <div className="absolute h-[271px] left-[79px] rounded-[20px] top-[3398px] w-[535px]">
-          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle60} />
+          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle60.src} />
         </div>
         <div className="absolute h-[271px] left-[785px] rounded-[20px] top-[3686px] w-[535px]">
           <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[20px]">
-            <img alt="" className="absolute h-[296.09%] left-[-0.31%] max-w-none top-[-159.58%] w-full" src={imgRectangle61} />
+            <img alt="" className="absolute h-[296.09%] left-[-0.31%] max-w-none top-[-159.58%] w-full" src={imgRectangle61.src} />
           </div>
         </div>
         <div className="absolute bg-[rgba(255,255,255,0)] h-[94px] left-[709px] rounded-[20px] top-[2637px] w-[684px]">
@@ -455,10 +455,10 @@ export default function HomePage() {
           <p>&nbsp;</p>
         </div>
         <div className="absolute h-[271px] left-[79px] rounded-[20px] top-[3972px] w-[535px]">
-          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle62} />
+          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle62.src} />
         </div>
         <div className="absolute h-[271px] left-[780px] rounded-[20px] top-[4259px] w-[535px]">
-          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle63} />
+          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle63.src} />
         </div>
         <p className="absolute font-['Poppins:Regular',_sans-serif] h-[53px] leading-[0.97] left-[686.5px] not-italic text-[#232429] text-[40px] text-center top-[4012px] tracking-[-1.6px] translate-x-[-50%] w-[145px]">03</p>
         <p className="absolute font-['Poppins:Regular',_sans-serif] h-[53px] leading-[0.97] left-[686.5px] not-italic text-[#232429] text-[40px] text-center top-[4299px] tracking-[-1.6px] translate-x-[-50%] w-[145px]">04</p>
@@ -473,16 +473,16 @@ export default function HomePage() {
           <p>&nbsp;</p>
         </div>
         <div className="absolute h-[271px] left-[80px] rounded-[20px] top-[4546px] w-[535px]">
-          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle64} />
+          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle64.src} />
         </div>
         <div className="absolute h-[282px] left-[80px] rounded-[20px] top-[5658px] w-[286px]">
-          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle72} />
+          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle72.src} />
         </div>
         <div className="absolute h-[268px] left-[80px] rounded-[20px] top-[5955px] w-[286px]">
-          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle73} />
+          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle73.src} />
         </div>
         <div className="absolute h-[563px] left-[377px] rounded-[20px] top-[5658px] w-[322px]">
-          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle74} />
+          <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none rounded-[20px] size-full" src={imgRectangle74.src} />
         </div>
         <p className="absolute font-['Poppins:Regular',_sans-serif] h-[53px] leading-[0.97] left-[686.5px] not-italic text-[#232429] text-[40px] text-center top-[4586px] tracking-[-1.6px] translate-x-[-50%] w-[145px]">05</p>
         <p className="absolute font-['Poppins:Regular',_sans-serif] h-[53px] leading-[0.97] left-[759px] not-italic text-[#232429] text-[40px] top-[4586px] tracking-[-1.6px] w-[400px]">Parking</p>

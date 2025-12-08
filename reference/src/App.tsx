@@ -1,3 +1,4 @@
+// @ts-nocheck
 import svgPaths from "./imports/svg-wgmo44jv2q";
 import imgRectangle18 from "figma:asset/953871fa65cd409014be2a3f00e7ab6a17c42606.png";
 import imgRectangle19 from "figma:asset/cae997d763695a6d7b2dc687b118e53623d49e9b.png";

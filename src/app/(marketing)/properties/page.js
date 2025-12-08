@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { MapPin, BedDouble, Bath, CalendarDays } from "lucide-react";
 
-export default function PropertiesPage() {
+function PropertiesContent() {
   const [properties, setProperties] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -227,5 +227,13 @@ export default function PropertiesPage() {
       </div>
 
     </div>
+  );
+}
+
+export default function PropertiesPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-gray-50 text-lg">Loading...</div>}>
+      <PropertiesContent />
+    </Suspense>
   );
 }
