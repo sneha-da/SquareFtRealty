@@ -1,46 +1,54 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
-import SearchBar from "./search-bar";
-import PropertyCard from "./property-card";
 
 export default function HeroSection() {
-  const properties = [
-    {
-      image: "/assets/953871fa65cd409014be2a3f00e7ab6a17c42606.png",
-      title: "3BHK for Sale @ Tambaram",
-      location: "Near Lorem Ipsum",
-      price: "₹1,00,000"
-    },
-    {
-      image: "/assets/cae997d763695a6d7b2dc687b118e53623d49e9b.png",
-      title: "3BHK for Sale @ Tambaram",
-      location: "Near Lorem Ipsum",
-      price: "₹1,00,000"
-    },
-    {
-      image: "/assets/953871fa65cd409014be2a3f00e7ab6a17c42606.png",
-      title: "3BHK for Sale @ Tambaram",
-      location: "Near Lorem Ipsum",
-      price: "₹1,00,000"
-    },
-    {
-      image: "/assets/953871fa65cd409014be2a3f00e7ab6a17c42606.png",
-      title: "3BHK for Sale @ Tambaram",
-      location: "Near Lorem Ipsum",
-      price: "₹1,00,000"
-    },
-    {
-      image: "/assets/cae997d763695a6d7b2dc687b118e53623d49e9b.png",
-      title: "3BHK for Sale @ Tambaram",
-      location: "Near Lorem Ipsum",
-      price: "₹1,00,000"
-    },
-    {
-      image: "/assets/953871fa65cd409014be2a3f00e7ab6a17c42606.png",
-      title: "3BHK for Sale @ Tambaram",
-      location: "Near Lorem Ipsum",
-      price: "₹1,00,000"
+  const [properties, setProperties] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [propertyType, setPropertyType] = useState("");
+  const [bedrooms, setBedrooms] = useState("");
+  const router = useRouter();
+
+  useEffect(() => {
+    async function fetchFeaturedProperties() {
+      try {
+        const [templates, basicDetails, statusDetails] = await Promise.all([
+          fetch("https://sq-feet.vercel.app/api/template-details", { cache: "no-store" }).then(r => r.json()),
+          fetch("https://sq-feet.vercel.app/api/basic-details", { cache: "no-store" }).then(r => r.json()),
+          fetch("https://sq-feet.vercel.app/api/status-availability", { cache: "no-store" }).then(r => r.json())
+        ]);
+        
+        const featured = templates.filter(p => p.featured === "yes").slice(0, 6);
+        
+        const merged = featured.map(t => {
+          const b = basicDetails.find(x => x.id === t.id);
+          const s = statusDetails.find(x => x.id === t.id);
+          return {
+            ...t,
+            propertyType: b?.propertyType?.toLowerCase().trim() || "featured",
+            bedrooms: b?.bedrooms || 3,
+            bathrooms: b?.bathrooms || 2,
+            propertyStatus: s?.propertyStatus || "Available"
+          };
+        });
+        
+        setProperties(merged);
+      } catch (error) {
+        console.error("Failed to load featured properties:", error);
+      }
     }
-  ];
+    fetchFeaturedProperties();
+  }, []);
+
+  const handleSearch = () => {
+    const params = new URLSearchParams();
+    if (searchTerm) params.set("search", searchTerm);
+    if (propertyType) params.set("type", propertyType);
+    if (bedrooms) params.set("bedrooms", bedrooms);
+    router.push(`/properties?${params.toString()}`);
+  };
 
   const amenities = [
     {
@@ -125,13 +133,49 @@ export default function HeroSection() {
             />
           </div>
           
-          {/* Search Bar Overlay - Half on image, half below */}
+          {/* Search Bar Overlay */}
           <div className="absolute -bottom-[50px] left-1/2 transform -translate-x-1/2 w-full max-w-[971px] px-6">
-            <div className="bg-white rounded-[20px] px-8 pt-8 pb-10 h-[158px] flex flex-col justify-center">
+            <div className="bg-white rounded-[20px] px-8 pt-8 pb-10 flex flex-col justify-center">
               <h3 className="text-[24px] font-medium mb-[20px] tracking-[-0.32px] text-[var(--figma-dark)]">
                 Find the best place
               </h3>
-              <SearchBar />
+              <div className="flex gap-4">
+                <input
+                  type="text"
+                  placeholder="Search location or property..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="flex-1 px-4 py-2 border border-gray-300 rounded-lg"
+                />
+                <select
+                  value={propertyType}
+                  onChange={(e) => setPropertyType(e.target.value)}
+                  className="px-4 py-2 border border-gray-300 rounded-lg"
+                >
+                  <option value="">Property Type</option>
+                  <option value="residentail-plot">Plot</option>
+                  <option value="residential-flat">Flat</option>
+                  <option value="residential-villas">Villa</option>
+                </select>
+                <select
+                  value={bedrooms}
+                  onChange={(e) => setBedrooms(e.target.value)}
+                  className="px-4 py-2 border border-gray-300 rounded-lg"
+                >
+                  <option value="">Bedrooms</option>
+                  <option value="1">1 BHK</option>
+                  <option value="2">2 BHK</option>
+                  <option value="3">3 BHK</option>
+                  <option value="4">4 BHK</option>
+                  <option value="5+">5+ BHK</option>
+                </select>
+                <button
+                  onClick={handleSearch}
+                  className="bg-[var(--figma-orange)] text-white px-8 py-2 rounded-lg font-semibold hover:opacity-90"
+                >
+                  Search
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -147,10 +191,67 @@ export default function HeroSection() {
         </p>
 
         {/* Property Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-          {properties.map((property, index) => (
-            <PropertyCard key={index} property={property} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {properties.map((property) => (
+            <div key={property.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition cursor-pointer" onClick={() => router.push(`/property-details/${property.id}`)}>
+              <div className="h-56 w-full relative">
+                <img
+                  src={property.imageUrl || "/assets/953871fa65cd409014be2a3f00e7ab6a17c42606.png"}
+                  className="w-full h-full object-cover"
+                  alt={property.propertyTitle}
+                />
+                <div className="absolute top-4 right-4 bg-white px-4 py-1 rounded-full text-gray-900 font-semibold shadow">
+                  ₹{property.price?.toLocaleString()}
+                </div>
+              </div>
+
+              <div className="p-5">
+                <span className="inline-block bg-orange-100 text-orange-700 text-xs px-3 py-1 rounded-full mb-2l mb-2">
+                  {property.propertyType || "Featured"}
+                </span>
+
+                <h2 className="text-lg font-semibold text-gray-900">{property.propertyTitle}</h2>
+
+                <p className="mt-1 text-gray-600 flex items-center gap-1 text-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  {property.locationAddress}, {property.city}
+                </p>
+
+                <div className="flex justify-between mt-3 text-gray-600 text-sm">
+                  <span className="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>
+                    {property.bedrooms || 3} Beds
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1 0l-1 1a1.5 1.5 0 0 0 0 1L7 9"/><path d="m15 6 2.5-2.5a1.5 1.5 0 0 1 1 0l1 1a1.5 1.5 0 0 1 0 1L17 9"/><path d="M9 18h.01"/><path d="M15 18h.01"/><path d="M20 15c.6-1.2.6-2.8 0-4l-2-3h-3"/><path d="M4 15c-.6-1.2-.6-2.8 0-4l2-3h3"/><path d="M9 18v3"/><path d="M15 18v3"/></svg>
+                    {property.bathrooms || 2} Baths
+                  </span>
+                </div>
+
+                <p className="mt-2 text-gray-500 text-sm flex items-center gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                  {property.propertyStatus || "Available"}
+                </p>
+
+                <button
+                  onClick={(e) => { e.stopPropagation(); router.push(`/property-details/${property.id}`); }}
+                  className="mt-4 bg-[var(--figma-orange)] hover:opacity-90 text-[var(--figma-dark)] w-full py-2 rounded-lg font-semibold transition-opacity"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
           ))}
+        </div>
+
+        {/* View All Properties Button */}
+        <div className="text-center">
+          <button
+            onClick={() => router.push('/properties')}
+            className="bg-[var(--figma-orange)] text-white px-10 py-3 rounded-[20px] font-semibold text-[16px] hover:opacity-90 transition-opacity"
+          >
+            View All Properties
+          </button>
         </div>
       </section>
 
